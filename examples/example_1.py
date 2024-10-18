@@ -10,6 +10,3 @@ output = parse_outputfile(
 
 pprint(output.dump())  # dumps json
 # output.model_dump()  # dumps a dict
-
-with open('output.json', 'w') as f:
-    json.dump(output.model_dump(), f)
