@@ -1,14 +1,11 @@
 from setuptools import setup, find_packages
 
-from ataims.version import __version__
-
-
 with open("requirements.txt", "r", encoding="utf-8") as fh:
     install_requires = [line.strip() for line in fh.readlines() if line.strip()]
 
 setup(
     name='outputparser',
-    version=__version__,
+    version=0.0.1,
     packages=find_packages(),
     description='A parser for FHI-aims output files',
     long_description=open('README.md').read(),
