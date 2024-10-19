@@ -5,7 +5,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name='outputparser',
-    version=0.0.1,
+    version='0.0.1',
     packages=find_packages(),
     description='A parser for FHI-aims output files',
     long_description=open('README.md').read(),
