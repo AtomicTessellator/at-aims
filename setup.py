@@ -13,7 +13,7 @@ setup(
     description='A parser for FHI-aims output files',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/AtomicTessellator/output_parser',
+    url='https://github.com/AtomicTessellator/at-aims',
     install_requires=install_requires,
     classifiers=[
         'Programming Language :: Python :: 3',
