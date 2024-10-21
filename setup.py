@@ -4,8 +4,8 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
     install_requires = [line.strip() for line in fh.readlines() if line.strip()]
 
 setup(
-    name='outputparser',
-    version='0.0.1',
+    name='ataims',
+    version='0.0.2',
     packages=find_packages(),
     description='A parser for FHI-aims output files',
     long_description=open('README.md').read(),
@@ -18,10 +18,10 @@ setup(
         'Operating System :: OS Independent',
     ],
     python_requires='>=3.6',
-    py_modules=['outputparser', 'tests'],
+    py_modules=['ataims', 'tests'],
         entry_points={
         'console_scripts': [
-            'outputparser=outputparser.__main__:main',
+            'ataims=ataims.__main__:main',
         ],
     },
 )
