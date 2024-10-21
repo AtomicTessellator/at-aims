@@ -7,7 +7,7 @@ from ataims import parse_outputfile
 
 def main():
     parser = argparse.ArgumentParser(
-                    prog='outputparser',
+                    prog='ataims',
                     description='Parses FHI-aims, Exciting and Quantum Espresso outputs',
     )
     parser.add_argument('filename', type=str, help='Path to the output file')
