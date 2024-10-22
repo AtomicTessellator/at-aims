@@ -35,9 +35,9 @@ class DataSeries(BaseModel):
 
 
 class ChangeOfSumOfEigenvalues(BaseModel):
-    charge_density:         Optional[DataSeries] = Field([], alias="chargeDensity")
-    charge_density_up:      Optional[DataSeries] = Field([], alias="chargeDensityUp")
-    charge_density_down:    Optional[DataSeries] = Field([], alias="chargeDensityDown")
+    charge_density:         Optional[DataSeries] = Field(None, alias="chargeDensity")
+    charge_density_up:      Optional[DataSeries] = Field(None, alias="chargeDensityUp")
+    charge_density_down:    Optional[DataSeries] = Field(None, alias="chargeDensityDown")
     eigen_values:           DataSeries = Field(..., alias="eigenvalues")
     total_energy:           DataSeries = Field(..., alias="totalEnergy")
 
