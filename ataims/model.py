@@ -25,7 +25,7 @@ class CalculationSummary(BaseModel):
     number_of_tasks:                        int
     total_time:                             float
     peak_memory_among_tasks_mb:             float
-    largest_tracked_array_allocation_mb:    float
+    largest_tracked_array_allocation_mb:    Optional[float]
     calculation_exited_regularly:           str
 
 
@@ -35,9 +35,11 @@ class DataSeries(BaseModel):
 
 
 class ChangeOfSumOfEigenvalues(BaseModel):
-    charge_density: DataSeries = Field(..., alias="chargeDensity")
-    eigen_values:   DataSeries = Field(..., alias="eigenvalues")
-    total_energy:   DataSeries = Field(..., alias="totalEnergy")
+    charge_density:         Optional[DataSeries] = Field(None, alias="chargeDensity")
+    charge_density_up:      Optional[DataSeries] = Field(None, alias="chargeDensityUp")
+    charge_density_down:    Optional[DataSeries] = Field(None, alias="chargeDensityDown")
+    eigen_values:           DataSeries = Field(..., alias="eigenvalues")
+    total_energy:           DataSeries = Field(..., alias="totalEnergy")
 
 
 class MaximumForceComponent(BaseModel):

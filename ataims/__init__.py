@@ -86,7 +86,7 @@ def _output_to_pydantic_class(output: OutputAims) -> OutputData:
         data['calculation_summary']['number_of_tasks'] = output.calculation_info['numberOfTasks']['value']
         # summary data can be missing due to the analysis not completing normally
         data['calculation_summary']['peak_memory_among_tasks_mb'] = output.memory['peakMemory']['value']
-        data['calculation_summary']['largest_tracked_array_allocation_mb'] = output.memory['largestArray']['value']
+        data['calculation_summary']['largest_tracked_array_allocation_mb'] = output.memory.get('largestArray', {}).get('value')
         data['calculation_summary']['total_time'] = output.final_timings['totalTime']['value'] if output.final_timings else None
 
         # maxmimum force component
