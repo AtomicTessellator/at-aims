@@ -888,7 +888,10 @@ class OutputAims(Output):
             'value': m[0],
             'info': 'Peak memory among tasks (MB)'
         }
-        m = re.findall(self.float_regex, self.wait_for(re.compile(r'   Maximum')))
+        line_match = self.wait_for(re.compile(r'   Maximum'))
+        if line_match is None:
+            return memory
+        m = re.findall(self.float_regex, line_match)
         memory['largestArray'] = {
             'value': m[0],
             'info': 'Largest tracked array allocation (MB)'

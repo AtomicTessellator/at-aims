@@ -1,4 +1,3 @@
-import json
 from pprint import pprint
 from ataims import parse_outputfile
 
