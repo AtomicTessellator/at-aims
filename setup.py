@@ -1,11 +1,13 @@
 from setuptools import setup, find_packages
+from ataims.version import __version__
+
 
 with open("requirements.txt", "r", encoding="utf-8") as fh:
     install_requires = [line.strip() for line in fh.readlines() if line.strip()]
 
 setup(
     name='ataims',
-    version='0.0.2',
+    version=__version__,
     packages=find_packages(),
     description='A parser for FHI-aims output files',
     long_description=open('README.md').read(),
@@ -17,11 +19,10 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
-    python_requires='>=3.6',
-    py_modules=['ataims', 'tests'],
-        entry_points={
-        'console_scripts': [
-            'ataims=ataims.__main__:main',
+    python_requires='>=3.10',
+    entry_points={
+    'console_scripts': [
+        'ataims=ataims.__main__:main',
         ],
     },
 )
