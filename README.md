@@ -9,12 +9,23 @@ To parse the file, use the `parse_outputfile` function:
 ```python
 from ataims import parse_outputfile
 
-output = parse_outputfile('aims.out')
+output_list = parse_outputfile('aims.out')  # returns a list of parsed data
+# or
+output = parse_outputfile('aims.out', as_set=False)  # returns a single OutputData object
+
+# output objects can be dumped to a json string
+print(output_list[0].dump())
+print(output.dump())
+
+# or a dictionary
+print(output_list[0].model_dump())
+print(output.model_dump())
 ```
 
 Now you can access the data in the output object:
 ```python
 # Result summary
+output = parse_outputfile('aims.out', as_set=False)
 print(output.results)
 {
     'cell_volume': 572.2999274955883,
