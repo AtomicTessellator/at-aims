@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 def parse_outputfile(
     filename: Union[str, Path], 
-    as_set: bool = True
+    as_set: bool = False
 ) -> Union[OutputData, List[BaseModel]]:
     """Parse an FHI-aims output file and return structured data.
 

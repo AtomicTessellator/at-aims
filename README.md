@@ -9,23 +9,14 @@ To parse the file, use the `parse_outputfile` function:
 ```python
 from ataims import parse_outputfile
 
-output_list = parse_outputfile('aims.out')  # returns a list of parsed data
+output = parse_outputfile('aims.out')  # returns a single OutputData object
 # or
-output = parse_outputfile('aims.out', as_set=False)  # returns a single OutputData object
-
-# output objects can be dumped to a json string
-print(output_list[0].dump())
-print(output.dump())
-
-# or a dictionary
-print(output_list[0].model_dump())
-print(output.model_dump())
+output_list = parse_outputfile('aims.out', as_set=True)  # returns a list of parsed data
 ```
 
-Now you can access the data in the output object:
+You can access the data in the output object:
 ```python
 # Result summary
-output = parse_outputfile('aims.out', as_set=False)
 print(output.results)
 {
     'cell_volume': 572.2999274955883,
@@ -48,8 +39,14 @@ print(output.calculation_summary)
     'total_time': 10285.059,
 }
 
-# Dump entire output object to json
+# Dump entire output object to json string
 print(output.dump())
+# same with nested objects
+print(output.results.dump())
+
+# or a dictionary
+print(output.model_dump())
+print(output_list[0].model_dump())  # with `as_set=True`
 ```
 
 For an example of a full output file see [examples/example_output.json](examples/example_output.json)
