@@ -6,6 +6,7 @@ from ataims import parse_outputfile
 
 
 def main():
+    """Basic CLI. For programmatic use `from ataims import parse_outputfile` ."""
     parser = argparse.ArgumentParser(
                     prog='ataims',
                     description='Parses FHI-aims, Exciting and Quantum Espresso outputs',
@@ -18,7 +19,7 @@ def main():
         logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     else:
         logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s') 
-    sys.stdout.write(parse_outputfile(fname, as_set=False).dump() + '\n')
+    sys.stdout.write(parse_outputfile(fname, as_set=False).model_dump_json() + '\n')
 
 
 if __name__ == '__main__':

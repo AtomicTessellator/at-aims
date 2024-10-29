@@ -1,6 +1,7 @@
 from pytest import fixture, raises
 
-from ataims import parse_outputfile, OutputData
+from ataims import parse_outputfile
+from ataims.model import OutputData
 from ataims.output_aims import OutputAims
 from ataims.exceptions import FHIOutputParserError
 from tests.test_files import expected
@@ -32,14 +33,6 @@ def test_get_results_quantities(output_instance: OutputData):
 
 def test_calculation_summary(output_instance: OutputData):
     assert output_instance.calculation_summary.model_dump() == expected.calculation_summary
-
-    # assert output.calculation_summary.code_version == '240507'
-    # assert output.calculation_summary.commit_number == '7e80a0c21'
-    # assert output.calculation_summary.number_of_tasks == 36
-    # assert isinstance(output.calculation_summary.total_time, float)
-    # assert output.calculation_summary.peak_memory_among_tasks_mb == 326.687
-    # assert output.calculation_summary.largest_tracked_array_allocation_mb == 42.804
-    # assert output.calculation_summary.calculation_exited_regularly == 'Yes'
 
 
 def test_change_of_sum_of_eigenvalues(output_instance: OutputAims):
