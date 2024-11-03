@@ -2,6 +2,9 @@
 
 This parser is designed to be a simple way to extract data from the output files of FHI-aims.
 
+## Installation
+```pip install ataims```
+
 ## Usage
 FHI-aims typically outputs a single file, `aims.out`.
 
@@ -51,11 +54,6 @@ print(output_list[0].model_dump())  # with `as_set=True`
 
 For an example of a full output file see [examples/example_output.json](examples/example_output.json)
 
-## Installation
-```pip install -r requirements.txt```
-
-## Development
-```pip install -e .```
 
 ## Testing
 ```pytest```
@@ -68,7 +66,7 @@ Development of this parser was possible thanks to the support of
 <br/>
 <br/>
 <a href="https://atomictessellator.com">
-    <img src="docs/at_logo.png" alt="Atomic Tessellator">
+    <img width="400" src="docs/at_logo.png" alt="Atomic Tessellator">
 </a>
 <br/>
 <hr/>
