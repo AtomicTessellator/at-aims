@@ -1,4 +1,4 @@
-# at-aims - Ad hoc parser for FHI-aims output files.
+# ataims - Parser for FHI-aims output files.
 
 This parser is designed to be a simple way to extract data from the output files of FHI-aims.
 
