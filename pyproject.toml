@@ -7,7 +7,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "at-aims"
+name = "ataims"
 version = "0.1.0"
 description = "A package for parsing AIMS output files"
 authors = [
