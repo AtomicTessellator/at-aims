@@ -57,22 +57,16 @@ For an example of a full output file see [examples/example_output.json](examples
 
 ## Testing
 ```pytest```
-
-<br/>
-<br/>
 <hr/>
-<br/>
 Development of this parser was possible thanks to the support of
 <br/>
 <br/>
 <a href="https://atomictessellator.com">
     <img width="400" src="docs/at_logo.png" alt="Atomic Tessellator">
 </a>
-<br/>
+
 <hr/>
-<br/>
 This project was inspired by some other brilliant FHI-aims tools:
 
 - [aimstools](https://github.com/romankempt/aimstools/)
 - [Atomic Simulation Environment (ASE)](https://gitlab.com/ase/ase)
-
