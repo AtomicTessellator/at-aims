@@ -10,6 +10,7 @@ from ataims.output_aims import OutputAims
 from ataims.util import get_output_instance
 from ataims.model import OutputData
 from ataims.exceptions import FHIOutputParserError
+from ataims.error_parser import parse_error_file
 
 
 logger = logging.getLogger(__name__)
@@ -141,10 +142,17 @@ def _output_to_pydantic_class(output: OutputAims) -> OutputData:
     terminated_normally_bool = output.exit_mode['normalTermination']
     data['calculation_summary']['calculation_exited_regularly'] = "Yes" if terminated_normally_bool else "No"
     if not terminated_normally_bool:
+        parser_errors = set()
+        [parser_errors.add(error[0]) for error in output.errors]
+        logger.debug(f"Simulation did not terminate normally!")
+        logger.debug(f"Parsing errors: {parser_errors}")
         output.scan_for_errors()  # added error parsing
         if output.errors_set:
             raise Exception("Critical errors detected in output file")
-
+    # errors that fhiaims writes
+    filename = next(iter(output.files['output']))
+    error_lines = parse_error_file(filename)
+    data['errors'] = error_lines
 
     # validation
     try:

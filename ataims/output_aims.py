@@ -917,11 +917,11 @@ class OutputAims(Output):
         """ Searches for error messages found in the output file
             based on predefined regex patterns and adds them to self.errors
 
-            This has been added to the original impl.
+            This has been added to the original implementation and assumes that 
+            a simulation not completing invalidates any written results.
         """
         error_patterns = [
-            r"BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES",
-            r"\*{3}\s*.*?\s*Error"
+            r"BAD TERMINATION OF ONE OF YOUR APPLICATION PROCESSES",  # killed by signal -9
         ]
         combined_pattern = '|'.join(error_patterns)
         regex = re.compile(combined_pattern, re.IGNORECASE)

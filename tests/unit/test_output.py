@@ -47,6 +47,10 @@ def test_maximum_force_component(output_instance: OutputAims):
     assert output_instance.maximum_force_component.energy.data[0] == expected.maximum_force_component['energy']['data'][0]
 
 
+def test_errors_dict(output_instance: OutputData):
+    assert output_instance.errors == {}
+
+
 def test_file_with_errors(output_file_with_errors: str):
     with raises(FHIOutputParserError):
         parse_outputfile(output_file_with_errors, as_set=False)
