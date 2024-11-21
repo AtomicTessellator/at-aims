@@ -53,3 +53,4 @@ class OutputData(BaseModel):
     calculation_summary:             CalculationSummary
     change_of_sum_of_eigenvalues:    List[ChangeOfSumOfEigenvalues]
     maximum_force_component:         Optional[MaximumForceComponent]
+    errors:                          Optional[dict[str, list[int]]]

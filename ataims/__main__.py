@@ -19,7 +19,12 @@ def main():
         logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
     else:
         logging.basicConfig(level=logging.WARNING, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s') 
-    sys.stdout.write(parse_outputfile(fname, as_set=False).model_dump_json() + '\n')
+    try:
+        out = parse_outputfile(fname, as_set=False).model_dump_json() + '\n'
+    except Exception as e:
+        sys.stdout.write(f"Error parsing output file: {e}\n")
+        sys.exit(1)
+    sys.stdout.write(out)
 
 
 if __name__ == '__main__':
