@@ -440,7 +440,10 @@ class OutputAims(Output):
             for entry in last_iter["electronInfo"].values():
                 quantities[entry["info"]] = entry["value"]
 
-            if self.run_time_choices["is_periodic"]:
+            if (
+                hasattr(self.run_time_choices, "is_periodic")
+                and self.run_time_choices["is_periodic"]
+            ):
                 from .util import get_parallelepiped_volume
 
                 quantities["Cell Volume (&#197;<sup>3</sup>)"] = float(
