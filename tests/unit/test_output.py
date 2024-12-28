@@ -28,7 +28,8 @@ def output_instance(output_file: str) -> OutputData:
 
 
 def test_get_results_quantities(output_instance: OutputData):
-    assert output_instance.results.model_dump() == expected.results
+    results = output_instance.results.model_dump()
+    assert results == expected.results
 
 
 def test_calculation_summary(output_instance: OutputData):

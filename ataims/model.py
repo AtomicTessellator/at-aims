@@ -16,7 +16,7 @@ class Results(BaseModel):
     highest_occupied_state: float = Field(..., alias="Highest occupied state (eV)")
     lowest_unoccupied_state: float = Field(..., alias="Lowest unoccupied state (eV)")
     estimated_homo_lumo_gap: float = Field(..., alias="Estimated HOMO-LUMO gap (eV)")
-    cell_volume: float = Field(None, alias="Cell Volume (&#197;<sup>3</sup>)")
+    cell_volume: Optional[float] = Field(None, alias="Cell Volume (&#197;<sup>3</sup>)")
 
 
 class CalculationSummary(BaseModel):

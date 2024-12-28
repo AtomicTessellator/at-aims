@@ -441,8 +441,8 @@ class OutputAims(Output):
                 quantities[entry["info"]] = entry["value"]
 
             if (
-                hasattr(self.run_time_choices, "is_periodic")
-                and self.run_time_choices["is_periodic"]
+                hasattr(self.structure_in, "lat_vectors")
+                and self.structure_in.lat_vectors
             ):
                 from .util import get_parallelepiped_volume
 
