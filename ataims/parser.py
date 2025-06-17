@@ -124,13 +124,13 @@ def _output_to_pydantic_class(output: OutputAims) -> OutputData:
 
     # Calculation summary
     output.get_calculation_info()
-    data['calculation_summary']['code_version'] = output.calculation_info['codeVersion']['value']
-    data['calculation_summary']['commit_number'] = output.calculation_info['commitNumber']['value']
-    data['calculation_summary']['number_of_tasks'] = output.calculation_info['numberOfTasks']['value']
+    data['calculation_summary']['code_version'] = output.calculation_info.get('codeVersion', {}).get('value')
+    data['calculation_summary']['commit_number'] = output.calculation_info.get('commitNumber', {}).get('value')
+    data['calculation_summary']['number_of_tasks'] = output.calculation_info.get('numberOfTasks', {}).get('value')
     # summary data can be missing due to the analysis not completing normally
-    data['calculation_summary']['peak_memory_among_tasks_mb'] = output.memory['peakMemory']['value']
+    data['calculation_summary']['peak_memory_among_tasks_mb'] = output.memory.get('peakMemory', {}).get('value')
     data['calculation_summary']['largest_tracked_array_allocation_mb'] = output.memory.get('largestArray', {}).get('value')
-    data['calculation_summary']['total_time'] = output.final_timings['totalTime']['value'] if output.final_timings else None
+    data['calculation_summary']['total_time'] = output.final_timings.get('totalTime', {}).get('value') if output.final_timings else None
 
     # maxmimum force component
     data['maximum_force_component'] = output.relaxation_series if hasattr(output, 'relaxation_series') else None
