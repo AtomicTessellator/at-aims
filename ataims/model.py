@@ -23,8 +23,8 @@ class CalculationSummary(BaseModel):
     code_version: str
     commit_number: str
     number_of_tasks: int
-    total_time: float
-    peak_memory_among_tasks_mb: float
+    total_time: Optional[float]
+    peak_memory_among_tasks_mb: Optional[float]
     largest_tracked_array_allocation_mb: Optional[float]
     calculation_exited_regularly: str
 
