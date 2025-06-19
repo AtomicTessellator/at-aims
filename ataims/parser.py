@@ -128,8 +128,10 @@ def _output_to_pydantic_class(output: OutputAims) -> OutputData:
     data['calculation_summary']['commit_number'] = output.calculation_info.get('commitNumber', {}).get('value')
     data['calculation_summary']['number_of_tasks'] = output.calculation_info.get('numberOfTasks', {}).get('value')
     # summary data can be missing due to the analysis not completing normally
-    data['calculation_summary']['peak_memory_among_tasks_mb'] = output.memory.get('peakMemory', {}).get('value')
-    data['calculation_summary']['largest_tracked_array_allocation_mb'] = output.memory.get('largestArray', {}).get('value')
+    # Handle case where memory attribute is None or missing
+    memory_data = getattr(output, 'memory', None) or {}
+    data['calculation_summary']['peak_memory_among_tasks_mb'] = memory_data.get('peakMemory', {}).get('value')
+    data['calculation_summary']['largest_tracked_array_allocation_mb'] = memory_data.get('largestArray', {}).get('value')
     data['calculation_summary']['total_time'] = output.final_timings.get('totalTime', {}).get('value') if output.final_timings else None
 
     # maxmimum force component
@@ -137,9 +139,9 @@ def _output_to_pydantic_class(output: OutputAims) -> OutputData:
 
     # eigenvalues, totalenergy, chargedensity
     output.get_data_series()
-    data['change_of_sum_of_eigenvalues'] = output.data_series
+    data['change_of_sum_of_eigenvalues'] = output.data_series if hasattr(output, 'data_series') else None
     # errors
-    terminated_normally_bool = output.exit_mode['normalTermination']
+    terminated_normally_bool = output.exit_mode['normalTermination'] if hasattr(output, 'exit_mode') else None
     data['calculation_summary']['calculation_exited_regularly'] = "Yes" if terminated_normally_bool else "No"
     if not terminated_normally_bool:
         parser_errors = set()

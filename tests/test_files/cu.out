@@ -1,0 +1,424 @@
+------------------------------------------------------------
+          Invoking FHI-aims ...
+
+          When using FHI-aims, please cite the following reference:
+
+            Volker Blum, Ralf Gehrke, Felix Hanke, Paula Havu,
+            Ville Havu, Xinguo Ren, Karsten Reuter, and Matthias Scheffler,
+            'Ab Initio Molecular Simulations with Numeric Atom-Centered Orbitals',
+            Computer Physics Communications 180, 2175-2196 (2009)
+
+          In addition, many other developments in FHI-aims are likely important for
+          your particular application. If so, please cite them. A partial list of references
+          is written at the end of this file. Thank you for giving credit to the authors
+          of these developments.
+
+          For general information about FHI-aims please find us at
+
+            https://fhi-aims.org
+
+          Online tutorials can be found at
+
+            https://fhi-aims-club.gitlab.io/tutorials/tutorials-overview/
+
+          For any questions about FHI-aims, please visit our slack channel at
+
+            https://fhi-aims.slack.com
+
+          and our main development and support site at
+
+            https://aims-git.rz-berlin.mpg.de .
+
+          The latter site, in particular, has a wiki to collect information, as well
+          as an issue tracker to log discussions, suggest improvements, and report issues
+          or bugs. https://aims-git.rz-berlin.mpg.de is also the main development site
+          of the project and all new and updated code versions can be obtained there.
+          Please send an email to aims-coordinators@fhi-berlin.mpg.de and we will add
+          you to these sites. They are for you and everyone is welcome there.
+
+------------------------------------------------------------
+
+
+
+  Date     :  20250617, Time     :  231656.471
+  Time zero on CPU 1             :   0.372595000000000E+00  s.
+  Internal wall clock time zero  :           519434216.471  s.
+
+  FHI-aims created a unique identifier for this run for later identification
+  aims_uuid : BD242D6A-909A-49A7-A405-AA86C12B6763
+
+  Build configuration of the current instance of FHI-aims
+  -------------------------------------------------------
+  FHI-aims version      : 240920
+  Commit number         : c0120a398
+  CMake host system     : Linux-6.1.0-18-amd64
+  CMake version         : 3.22.1
+  Fortran compiler      : /opt/intel/oneapi/mpi/2021.13/bin/mpiifx (IntelLLVM) version 2024.2.0
+  Fortran compiler flags: -O3 -fp-model precise -I/opt/intel/oneapi/mpi/latest/include
+  C compiler            : /opt/intel/oneapi/mpi/2021.13/bin/mpiicx (IntelLLVM) version 2024.2.0
+  C compiler flags      : -O3 -fp-model precise -std=gnu99
+  C++ compiler          : /opt/intel/oneapi/mpi/2021.13/bin/mpiicpx (IntelLLVM) version 2024.2.0
+  C++ compiler flags    : -O3 -fp-model precise
+  CUDA compiler         : /opt/nvidia/hpc_sdk/Linux_x86_64/24.5/compilers/bin/nvcc
+  CUDA compiler flags   : -O3 -DAdd_ -gencode=arch=compute_60,code=sm_60 -gencode=arch=compute_61,code=sm_61 -gencode=arch=compute_70,code=sm_70 -gencode=arch=compute_75,code=sm_75 -gencode=arch=compute_80,code=sm_80 -gencode=arch=compute_86,code=sm_86 -gencode=arch=compute_86,code=compute_86
+  HIP compiler          :
+  HIP compiler flags    :
+  HIP GPU arch          :
+  Using MPI
+  Using ScaLAPACK
+  Using LibXC
+  Using CUDA
+  Using i-PI
+  Using RLSY
+  Linking against: /usr/local/cuda/lib64/libcublas.so
+                   /usr/local/cuda/lib64/libcudart.so
+                   /opt/intel/oneapi/mkl/latest/lib/libmkl_scalapack_lp64.so
+                   /opt/intel/oneapi/mkl/latest/lib/libmkl_blacs_intelmpi_lp64.so
+                   /opt/intel/oneapi/mkl/latest/lib/libmkl_intel_lp64.so
+                   /opt/intel/oneapi/mkl/latest/lib/libmkl_sequential.so
+                   /opt/intel/oneapi/mkl/latest/lib/libmkl_core.so
+
+  Using       16 parallel tasks.
+  Task        0 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        1 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        2 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        3 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        4 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        5 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        6 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        7 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        8 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task        9 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task       10 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task       11 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task       12 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task       13 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task       14 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+  Task       15 on host 18fb7bcc-de56-4d7b-8aaf-0dcf69ff5ac4-5jjkx reporting.
+
+  Memory overcommitment is allowed on your operating system.
+
+  Obtaining array dimensions for all initial allocations:
+  
+  -----------------------------------------------------------------------
+  Parsing control.in (first pass over file, find array dimensions only).
+  The contents of control.in will be repeated verbatim below
+  unless switched off by setting 'verbatim_writeout .false.' .
+  in the first line of control.in .
+  -----------------------------------------------------------------------
+  
+  #===============================================================================
+  # FHI-aims relaxation template
+  #===============================================================================
+  
+  xc                           pbe
+  relativistic                 atomic_zora scalar
+  relax_geometry               bfgs         5e-3
+  k_grid                       4 4 4
+  use_gpu                      .true.
+  compute_forces               .true.
+  
+  
+  ################################################################################
+  #
+  #  FHI-aims code project
+  #  VB, Fritz-Haber Institut, 2010
+  #
+  #  Suggested "light" defaults for Cu atom (to be pasted into control.in file)
+  #  Be sure to double-check any results obtained with these settings for post-processing,
+  #  e.g., with the "tight" defaults and larger basis sets.
+  #
+  ################################################################################
+    species        Cu
+  #
+      nucleus      29
+      mass         63.546
+  #
+      l_hartree    4
+  #
+      cut_pot      3.5  1.5  1.0
+      basis_dep_cutoff    1e-4
+  #
+      radial_base        53 5.0
+      radial_multiplier  1
+      angular_grids       specified
+        division   0.5231   50
+        division   0.8642  110
+        division   1.1767  194
+        division   1.5041  302
+  #      division   1.9293  434
+  #      division   2.0065  590
+  #      division   2.0466  770
+  #      division   2.0877  974
+  #      division   2.4589 1202
+        outer_grid   302
+  ################################################################################
+  #
+  #  Definition of "minimal" basis
+  #
+  ################################################################################
+  #     valence basis states
+      valence      4  s   1.
+      valence      3  p   6.
+      valence      3  d  10.
+  #     ion occupancy
+      ion_occ      4  s   0.
+      ion_occ      3  p   6.
+      ion_occ      3  d   9.
+  ################################################################################
+  #
+  #  Suggested additional basis functions. For production calculations,
+  #  uncomment them one after another (the most important basis functions are
+  #  listed first).
+  #
+  #  Constructed for dimers: 1.8, 2.2, 3.0, 4.0 Ang
+  #
+  ################################################################################
+  #  "First tier" - improvements: -211.42 meV to -9.17 meV
+       ionic 4 p auto
+       hydro 4 f 7.4
+       hydro 3 s 2.6
+       hydro 3 d 5
+  #     hydro 5 g 10.4
+  #  "Second tier" - improvements: -2.49 meV to -1.08 meV
+  #     hydro 4 p 5.8
+  #     hydro 3 d 2.7
+  #     hydro 6 h 15.2
+  #     hydro 5 s 10.8
+  #     hydro 4 f 16
+  #  "Third tier" - improvements: -0.50 meV to -0.21 meV
+  #     hydro 4 d 6
+  #     hydro 3 p 2.4
+  #     hydro 4 f 6.4
+  #     hydro 3 s 6.8
+  #     hydro 5 g 11.2
+  #  "Fourth tier" - improvements: -0.13 meV to -0.05 meV
+  #     hydro 4 p 7
+  #     hydro 4 s 4
+  #     hydro 6 h 14
+  #     hydro 4 d 8.6
+  #     hydro 5 f 15.2
+  
+  -----------------------------------------------------------------------
+  Completed first pass over input file control.in .
+  -----------------------------------------------------------------------
+  
+  
+  -----------------------------------------------------------------------
+  Parsing geometry.in (first pass over file, find array dimensions only).
+  The contents of geometry.in will be repeated verbatim below
+  unless switched off by setting 'verbatim_writeout .false.' .
+  in the first line of geometry.in .
+  -----------------------------------------------------------------------
+  
+  atom 0.0000000000000000 0.0000000000000000 0.0000000000000000 Cu
+  atom 1.7887153625488281 1.7887153625488281 0.0000000000000000 Cu
+  atom 1.7887153625488281 0.0000000000000000 1.7887153625488281 Cu
+  atom 0.0000000000000000 1.7887153625488281 1.7887153625488281 Cu
+  
+  -----------------------------------------------------------------------
+  Completed first pass over input file geometry.in .
+  -----------------------------------------------------------------------
+  
+
+  Basic array size parameters:
+  | Number of species                 :        1
+  | Number of atoms                   :        4
+  | Max. basis fn. angular momentum   :        3
+  | Max. atomic/ionic basis occupied n:        4
+  | Max. number of basis fn. types    :        3
+  | Max. radial fns per species/type  :        7
+  | Max. logarithmic grid size        :     1406
+  | Max. radial integration grid size :       53
+  | Max. angular integration grid size:      302
+  | Max. angular grid division number :        8
+  | Radial grid for Hartree potential :     1406
+  | Number of spin channels           :        1
+
+------------------------------------------------------------
+          Reading file control.in.
+------------------------------------------------------------
+  XC: Using PBE gradient-corrected functionals.
+  Scalar relativistic treatment of kinetic energy: on-site free-atom approximation to ZORA.
+  Geometry relaxation: Modified BFGS - TRM (trust radius method) for lattice optimization.
+  Convergence accuracy for geometry relaxation: Maximum force <   0.500000E-02 eV/A.
+  Found k-point grid:         4         4         4
+  Forces will be computed.
+ 
+  Reading configuration options for species Cu                  .
+  | Found nuclear charge :  29.0000
+  | Found atomic mass :    63.5460000000000      amu
+  | Found l_max for Hartree potential  :   4
+  | Found cutoff potl. onset [A], width [A], scale factor :    3.50000    1.50000    1.00000
+  | Threshold for basis-dependent cutoff potential is   0.100000E-03
+  | Found data for basic radial integration grid :    53 points, outermost radius =    5.000 A
+  | Found multiplier for basic radial grid :   1
+  | Found angular grid specification: user-specified.
+  | Specified grid contains     5 separate shells.
+  | Check grid settings after all constraints further below.
+  | Found free-atom valence shell :  4 s   1.000
+  | Found free-atom valence shell :  3 p   6.000
+  | Found free-atom valence shell :  3 d  10.000
+  | Found free-ion valence shell :  4 s   0.000
+  | Found free-ion valence shell :  3 p   6.000
+  | Found free-ion valence shell :  3 d   9.000
+  | Found ionic basis function :  4 p , default cutoff radius.
+  | Found hydrogenic basis function :  4 f   7.400
+  | Found hydrogenic basis function :  3 s   2.600
+  | Found hydrogenic basis function :  3 d   5.000
+  Species Cu                  : Missing cutoff potential type.
+  Defaulting to exp(1/x)/(1-x)^2 type cutoff potential.
+  Species Cu: No 'logarithmic' tag. Using default grid for free atom:
+  | Default logarithmic grid data [bohr] : 0.1000E-03 0.1000E+03 0.1012E+01
+  | Will include ionic basis functions of  2.0-fold positive Cu                   ion.
+  Species Cu: On-site basis accuracy parameter (for Gram-Schmidt orthonormalisation) not specified.
+  Using default value basis_acc =  0.1000000E-03.
+  Species Cu                  : Using default innermost maximum threshold i_radial=  2 for radial functions.
+  Species Cu                  : Default cutoff onset for free atom density etc. : 0.35000000E+01 AA.
+  Species Cu                  : Basic radial grid will be enhanced according to radial_multiplier =   1, to contain    53 grid points.
+ 
+  Finished reading input file 'control.in'.
+ 
+------------------------------------------------------------
+
+
+------------------------------------------------------------
+          Reading geometry description geometry.in.
+------------------------------------------------------------
+  | The smallest distance between any two atoms is         2.52962552 AA.
+  | The first atom of this pair is atom number                      1 .
+  | The second atom of this pair is atom number                     2 .
+  Input structure read successfully.
+  The structure contains        4 atoms,  and a total of        116.000 electrons.
+
+  Input geometry:
+  | No unit cell requested.
+  | Atomic structure:
+  |       Atom                x [A]            y [A]            z [A]
+  |    1: Species Cu            0.00000000        0.00000000        0.00000000
+  |    2: Species Cu            1.78871536        1.78871536        0.00000000
+  |    3: Species Cu            1.78871536        0.00000000        1.78871536
+  |    4: Species Cu            0.00000000        1.78871536        1.78871536
+
+  Slab Identifier: This is not a periodic structure.
+ 
+  Finished reading input file 'geometry.in'.
+ 
+
+ 
+  Consistency checks for stacksize environment parameter are next.
+ 
+  | Maximum stacksize for task 0: unlimited
+  | Maximum stacksize for task 1: unlimited
+  | Maximum stacksize for task 2: unlimited
+  | Maximum stacksize for task 3: unlimited
+  | Maximum stacksize for task 4: unlimited
+  | Maximum stacksize for task 5: unlimited
+  | Maximum stacksize for task 6: unlimited
+  | Maximum stacksize for task 7: unlimited
+  | Maximum stacksize for task 8: unlimited
+  | Maximum stacksize for task 9: unlimited
+  | Maximum stacksize for task 10: unlimited
+  | Maximum stacksize for task 11: unlimited
+  | Maximum stacksize for task 12: unlimited
+  | Maximum stacksize for task 13: unlimited
+  | Maximum stacksize for task 14: unlimited
+  | Maximum stacksize for task 15: unlimited
+  | Current stacksize for task 0: unlimited
+  | Current stacksize for task 1: unlimited
+  | Current stacksize for task 2: unlimited
+  | Current stacksize for task 3: unlimited
+  | Current stacksize for task 4: unlimited
+  | Current stacksize for task 5: unlimited
+  | Current stacksize for task 6: unlimited
+  | Current stacksize for task 7: unlimited
+  | Current stacksize for task 8: unlimited
+  | Current stacksize for task 9: unlimited
+  | Current stacksize for task 10: unlimited
+  | Current stacksize for task 11: unlimited
+  | Current stacksize for task 12: unlimited
+  | Current stacksize for task 13: unlimited
+  | Current stacksize for task 14: unlimited
+  | Current stacksize for task 15: unlimited
+ 
+  Consistency checks for the contents of control.in are next.
+ 
+  MPI_IN_PLACE appears to work with this MPI implementation.
+  | Keeping use_mpi_in_place .true. (see manual).
+  Target number of points in a grid batch is not set.  Since GPU acceleration is enabled, defaulting to  200
+  Method for grid partitioning is not set. Defaulting to parallel hash+maxmin partitioning.
+  Batch size limit is not set. Defaulting to    200
+  By default, will store active basis functions for each batch.
+  If in need of memory, prune_basis_once .false. can be used to disable this option.
+  communication_type for Hartree potential was not specified.
+  Defaulting to calc_hartree .
+  Defaulting to Pulay charge density mixer.
+  Pulay mixer: Number of relevant iterations not set.
+  Defaulting to    8 iterations.
+  Pulay mixer: Number of initial linear mixing iterations not set.
+  Defaulting to    0 iterations.
+  Work space size for distributed Hartree potential not set.
+  Defaulting to   0.200000E+03 MB.
+  Mixing parameter for charge density mixing has not been set.
+  Using default: charge_mix_param =     0.0500.
+  The mixing parameter will be adjusted in iteration number     2 of each s.c.f. cycle (i.e., each geometry step).
+  Algorithm-dependent basis array size parameters:
+  | n_max_pulay                         :        8
+  Maximum number of self-consistency iterations not provided.
+  Presetting  1000 iterations.
+  Presetting      1001 iterations before the initial mixing cycle
+  is restarted anyway using the sc_init_iter criterion / keyword.
+  Presetting a factor      1.000 between actual scf density residual
+  and density convergence criterion sc_accuracy_rho below which sc_init_iter
+  takes no effect.
+ * No s.c.f. convergence criteria (sc_accuracy_*) were provided in control.in.
+ * The run will proceed with a reasonable default guess, but please check whether.
+ * the s.c.f. cycles seem to take too much or too little time.
+  No maximum number of relaxation steps, defaulting to     1000
+  Default initial Hessian is Lindh matrix (thres = 15.00) plus  0.200000E+01 eV/A^2 times unity.
+  No maximum energy tolerance for TRM/BFGS moves, defaulting to   0.150000E-02
+  Maximum energy tolerance by which TRM/BFGS trajectory may increase over multiple steps:   0.300000E-02
+  No harmonic length scale. Defaulting to   0.250000E-01 A.
+  No trust radius initializer. Defaulting to   0.200000E+00 A.
+  Forces evaluation will include force correction term due to incomplete self-consistency (default).
+ * Notice: The s.c.f. convergence criterion sc_accuracy_rho was not provided.
+ * We used to stop in this case, and ask the user to provide reasonable
+ * scf convergence criteria. However, this led some users to employ criteria
+ * that led to extremely long run times, e.g., for simple relaxation.
+ * We now preset a default value for sc_accuracy_rho if it is not set.
+ * You may still wish to check if this setting is too tight or too loose for your needs.
+ * Based on n_atoms and forces and force-correction status, FHI-aims chose sc_accuracy_rho =  0.800000E-05 .
+  Force calculation: scf convergence accuracy of forces not set.
+  Defaulting to 'sc_accuracy_forces not_checked'.
+  Handling of forces: Unphysical translation and rotation will be removed from forces.
+  No accuracy limit for integral partition fn. given. Defaulting to  0.1000E-14.
+  No threshold value for u(r) in integrations given. Defaulting to  0.1000E-05.
+  No occupation type (smearing scheme) given. Defaulting to Gaussian broadening, width =  0.1000E-01 eV.
+  The width will be adjusted in iteration number     2 of each s.c.f. cycle (i.e., each geometry step).
+  No accuracy for occupation numbers given. Defaulting to  0.1000E-12.
+  No threshold value for occupation numbers given. Defaulting to  0.0000E+00.
+  No accuracy for fermi level given. Defaulting to  0.1000E-19.
+  Maximum # of iterations to find E_F not set. Defaulting to  200.
+  Preferred method for the eigenvalue solver ('KS_method') not specified in 'control.in'.
+  Defaulting to serial version, LAPACK (via ELSI), since more k-points than CPUs available.
+  Will not use alltoall communication since running on < 1024 CPUs.
+  Threshold for basis singularities not set.
+  Default threshold for basis singularities:  0.1000E-04
+  partition_type (choice of integration weights) for integrals was not specified.
+  | Using a version of the partition function of Stratmann and coworkers ('stratmann_sparse').
+  | At each grid point, the set of atoms used to build the partition table is smoothly restricted to
+  | only those atoms whose free-atom density would be non-zero at that grid point.
+  Partitioning for Hartree potential was not defined. Using partition_type for integrals.
+  | Adjusted default value of keyword multip_moments_threshold to:       0.10000000E-11
+  | This value may affect high angular momentum components of the Hartree potential in periodic systems.
+  Spin handling was not defined in control.in. Defaulting to unpolarized case.
+  No q(lm)/r^(l+1) cutoff set for long-range Hartree potential.
+  | Using default value of  0.100000E-09 .
+  | Verify using the multipole_threshold keyword.
+  Defaulting to new monopole extrapolation.
+  Density update method: automatic selection selected.
+ * Error: Cluster calculation cannot have k-grid!
+ *** read_control:
+ 
+ *** read_control:
+ 
